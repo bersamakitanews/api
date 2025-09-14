@@ -1,11 +1,7 @@
-# Gunakan image PHP resmi
-FROM php:8.1-cli
-
-# Set working directory
-WORKDIR /app
+FROM php:8.1-apache
 
 # Copy semua file ke container
-COPY . .
+COPY . /var/www/html/
 
-# Jalankan PHP built-in server di port 10000
-CMD ["php", "-S", "0.0.0.0:10000", "wm.php"]
+# Expose port
+EXPOSE 80
